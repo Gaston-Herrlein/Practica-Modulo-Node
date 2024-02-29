@@ -10,6 +10,16 @@ const articleSchema = mongoose.Schema({
   tag: { type: [String] }
 });
 
+articleSchema.statics.listar = (filtro, skip, limit, sort, fields) => {
+  // eslint-disable-next-line no-use-before-define
+  const query = Article.find(filtro);
+  query.skip(skip);
+  query.limit(limit);
+  query.sort(sort);
+  query.select(fields);
+  return query.exec();
+};
+
 const Article = mongoose.model('Article', articleSchema);
 
 module.exports = Article;
