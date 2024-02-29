@@ -6,7 +6,7 @@ const Article = require('../../models/article');
 
 // GET /api/article
 // Devuelve una lista de article
-// http://localhost:3000/?start=1&limit=3&sort=name&tag=lifestyle
+// http://localhost:3000/api/articles?start=1&limit=3&sort=name&tag=lifestyle
 router.get('/', async (req, res, next) => {
   try {
     // filtros
@@ -32,7 +32,8 @@ router.get('/', async (req, res, next) => {
 
     const articles = await Article.listar(filter, start, limit, sort, fields);
 
-    res.json({ results: articles });
+    // res.json({ results: articles });
+    res.render('articles', { subtitle: 'NodePOP with Express', articles });
   }
   catch (error) {
     next(error);
