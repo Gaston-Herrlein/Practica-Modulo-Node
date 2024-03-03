@@ -53,6 +53,16 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+router.get('/tags', async (req, res, next) => {
+  try {
+    const tags = await Article.distinct();
+    console.log('tags');
+  }
+  catch (error) {
+    next(error);
+  }
+});
+
 // POST /api/article
 // Crea un article
 router.post('/', async (req, res, next) => {
