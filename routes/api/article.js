@@ -40,6 +40,19 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+// GET /api/articles/tags
+// Devuelve una lista de tags
+router.get('/tags', async (req, res, next) => {
+  try {
+    const tags = await Article.find({}).distinct('tag');
+    console.log(`Los tags disponibles son \n ${tags}`);
+    res.render('tags', { subtitle: 'NodePOP with Express', tags });
+  }
+  catch (error) {
+    next(error);
+  }
+});
+
 // GET /api/articles/<_id>
 // Devuelve un article
 router.get('/:id', async (req, res, next) => {
@@ -47,16 +60,6 @@ router.get('/:id', async (req, res, next) => {
     const { id } = req.params;
     const article = await Article.findById(id);
     res.json({ result: article });
-  }
-  catch (error) {
-    next(error);
-  }
-});
-
-router.get('/tags', async (req, res, next) => {
-  try {
-    const tags = await Article.distinct();
-    console.log('tags');
   }
   catch (error) {
     next(error);
