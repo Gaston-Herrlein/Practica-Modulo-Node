@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NodePOP</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1>NodePOP</h1>
-    <h2>Welcome to <%= subtitle %></h2>
-    <div>
-        <ul>
-            <% tags.forEach((tag) => { %>
+    <div class="container">
+        <h1 class="mb-s">NodePOP</h1>
+        <h2 class="mb-l">Welcome to <%= subtitle %></h2>
+        <div>
+            <ul>
+                <% tags.forEach((tag) => { %>
                 <li>
                     <%= tag %>
                 </li>
-            <% }); %>
-        </ul>
-    </div>  
+                <% }); %>
+            </ul>
+        </div>  
+    </div>
 </body>
 </html>
