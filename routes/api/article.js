@@ -45,7 +45,6 @@ router.get('/', async (req, res, next) => {
 router.get('/tags', async (req, res, next) => {
   try {
     const tags = await Article.find({}).distinct('tag');
-    console.log(`Los tags disponibles son \n ${tags}`);
     res.render('tags', { subtitle: 'NodePOP with Express', tags });
   }
   catch (error) {
