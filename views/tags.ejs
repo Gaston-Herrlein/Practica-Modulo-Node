@@ -9,16 +9,15 @@
 <body>
     <div class="container">
         <h1 class="mb-s">NodePOP</h1>
-        <h2 class="mb-l">Welcome to <%= subtitle %></h2>
-        <div>
-            <ul>
-                <% tags.forEach((tag) => { %>
-                <li>
-                    <%= tag %>
-                </li>
-                <% }); %>
-            </ul>
-        </div>  
+        <h2 class="mb-s">Welcome to <%= subtitle %></h2>
+        <h3 class="mb-l">List of available tags</h3>
+        <ul class="flex-container">
+            <% tags.forEach((tag) => { %>
+            <li class="">
+                <a class="unstyle" href="#"><%= tag %></a>
+            </li>
+            <% }); %>
+        </ul> 
     </div>
 </body>
 </html>

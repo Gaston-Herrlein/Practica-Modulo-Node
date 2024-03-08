@@ -10,17 +10,16 @@
     <div class="container">
       <h1 class="mb-s">NodePOP</h1>
       <h2 class="mb-l">Welcome to <%= subtitle %></h2>
-      <div>
-          <ul>
-              <% articles.forEach((article) => { %>
-                  <li>
-                      <strong><%= article.name %></strong>
-                      <em>sale <%=article.sale%></em>
-                      price <%= article.price %>, tag <%= article.tag %>
-                  </li>
-              <% }); %>
-          </ul>
-      </div>  
+      <ul class="grid-container">
+        <% articles.forEach((article) => { %>
+            <li>
+                <h3><%= article.name %></h3>
+                <strong><%= article.sale ? "Sale" : "Wanted" %></strong>
+                <p>Price <em><%= article.price %></em></p>
+                <p><%= article.tag %></p>
+            </li>
+        <% }); %>  
+      </ul>  
     </div>
   </body>
 </html>

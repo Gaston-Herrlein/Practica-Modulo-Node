@@ -26,3 +26,32 @@ div.container{
 h1 {
   font-size: 2rem;
 }
+
+h2, h3 {
+  font-size: 1.3rem;
+}
+
+ul {
+  list-style: none;
+}
+
+ul.grid-container {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+ul.flex-container {
+  display: flex;
+  gap: 10px;
+}
+
+a.unstyle {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 1.1rem;
+}
