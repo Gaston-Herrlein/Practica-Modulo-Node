@@ -14,6 +14,8 @@
         <% articles.forEach((article) => { %>
             <li>
                 <h3><%= article.name %></h3>
+                <img src="/images/<%= article.photo %>" alt="<%= article.photo %>">
+                <br>
                 <strong><%= article.sale ? "Sale" : "Wanted" %></strong>
                 <p>Price <em><%= article.price %></em></p>
                 <p><%= article.tag %></p>

@@ -7,9 +7,14 @@
   font-size: 16px;
 }
 
+body{
+  background-color:antiquewhite
+}
+
 .mb-s{
   margin-bottom: 0.3rem;
 }
+
 .mb-l {
   margin-bottom: 1rem;
 }
@@ -55,3 +60,8 @@ a.unstyle {
 a:hover {
   font-size: 1.1rem;
 }
+
+/* img {
+  width: 80%;
+  height: auto;
+} */
